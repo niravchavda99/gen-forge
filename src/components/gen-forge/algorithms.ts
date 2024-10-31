@@ -31,5 +31,12 @@ export const algorithms: Algorithm[] = [
     title: "UUID",
     displayName: "Random UUID",
     type: AlgorithmType.UUID,
+    isInputDisabled: true,
+  }),
+  Object.freeze({
+    title: "Color",
+    displayName: "Random Color",
+    type: AlgorithmType.COLOR,
+    isInputDisabled: true,
   }),
 ];

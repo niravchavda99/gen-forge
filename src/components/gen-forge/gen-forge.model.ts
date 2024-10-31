@@ -4,6 +4,7 @@ export enum AlgorithmType {
   SHA1 = "SHA1",
   EPOCH = "EPOCH",
   UUID = "UUID",
+  COLOR = "COLOR",
 }
 
 export interface Algorithm {
