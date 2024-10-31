@@ -2,6 +2,7 @@ import { nanoid } from "nanoid";
 import md5 from "md5";
 import sha1 from "sha1";
 import { AlgorithmType } from "./gen-forge.model";
+import { v4 as uuidv4 } from "uuid";
 
 export type TransformInput = string | Uint8Array;
 type TransformerFunction = (text: TransformInput) => Promise<string>;
@@ -10,10 +11,11 @@ type AlgorithmFunctionMap = {
 };
 
 const algorithmFunctionMap: AlgorithmFunctionMap = {
-  md5: withPromise((text) => md5(text as string)),
-  sha1: withPromise((text) => sha1(text as string)),
-  epoch: withPromise(Date.now),
-  nanoid: withPromise(() => nanoid()),
+  [AlgorithmType.MD5]: withPromise((text) => md5(text as string)),
+  [AlgorithmType.SHA1]: withPromise((text) => sha1(text as string)),
+  [AlgorithmType.EPOCH]: withPromise(Date.now),
+  [AlgorithmType.NANOID]: withPromise(() => nanoid()),
+  [AlgorithmType.UUID]: withPromise(() => uuidv4()),
 };
 
 function withPromise(

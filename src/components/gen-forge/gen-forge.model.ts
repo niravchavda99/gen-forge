@@ -1,4 +1,10 @@
-export type AlgorithmType = "nanoid" | "md5" | "sha1" | "epoch";
+export enum AlgorithmType {
+  NANOID = "NANOID",
+  MD5 = "MD5",
+  SHA1 = "SHA1",
+  EPOCH = "EPOCH",
+  UUID = "UUID",
+}
 
 export interface Algorithm {
   title: string;
