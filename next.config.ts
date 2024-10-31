@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  distDir: 'dist',
+  output: "export",
+  distDir: "dist",
   basePath: "/gen-forge",
-  assetPrefix: '/gen-forge/',
+  assetPrefix: "/gen-forge/",
 };
 
 export default nextConfig;
