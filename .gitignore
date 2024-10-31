@@ -18,6 +18,9 @@
 /out/
 /dist/
 
+# IntelliJ
+.idea/
+
 # production
 /build
 
