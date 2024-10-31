@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter_Tight } from "next/font/google";
+import { Inter } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster";
+import Navbar from "@/components/navbar/navbar";
+import { ReactNode } from "react";
 
-const inter = Inter_Tight({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
@@ -15,11 +18,15 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <Navbar />
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }
