@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  basePath: "/gen-forge",
+  assetPrefix: '/gen-forge/',
 };
 
 export default nextConfig;
