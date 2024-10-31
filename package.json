@@ -2,11 +2,14 @@
   "name": "gen-forge",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://niravchavda99.github.io/gen-forge",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "deploy": "npm run build && npm run export && gh-pages -d out"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.1.2",
@@ -32,6 +35,7 @@
     "@types/sha1": "^1.1.5",
     "eslint": "^8",
     "eslint-config-next": "15.0.2",
+    "gh-pages": "^6.2.0",
     "postcss": "^8",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.1",
